@@ -1,8 +1,9 @@
 import decimal
+import uuid
+
 import msgpack
 from dateutil.parser import parse
-from django.utils.six import text_type
-
+from six import text_type
 
 from rest_framework.parsers import BaseParser
 from rest_framework.exceptions import ParseError
@@ -27,6 +28,9 @@ class MessagePackDecoder(object):
 
     def decode_decimal(self, obj):
         return decimal.Decimal(obj['as_str'])
+
+    def decode_uuid(self, obj):
+        return uuid.UUID(obj['as_str'])
 
 
 class MessagePackParser(BaseParser):

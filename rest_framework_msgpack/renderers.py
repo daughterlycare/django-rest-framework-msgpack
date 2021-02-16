@@ -1,3 +1,5 @@
+from uuid import UUID
+
 import msgpack
 import decimal
 import datetime
@@ -16,6 +18,8 @@ class MessagePackEncoder(object):
             return {'__class__': 'time', 'as_str': obj.isoformat()}
         elif isinstance(obj, decimal.Decimal):
             return {'__class__': 'decimal', 'as_str': str(obj)}
+        elif isinstance(obj, UUID):
+            return {'__class__': 'uuid', 'as_str': str(obj)}
         else:
             return obj
 
