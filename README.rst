@@ -4,7 +4,7 @@ Django Rest Framework Msgpack
 .. image:: https://api.travis-ci.org/juanriaza/django-rest-framework-msgpack.png?branch=master
         :target: https://travis-ci.org/juanriaza/django-rest-framework-msgpack
 
-:Version: 1.0.2
+:Version: 1.0.3
 :Author: `Juan Riaza <http://juanriaza.com>`_
 
 Overview
@@ -69,6 +69,13 @@ To run the tests against the current environment::
 
 Changelog
 =========
+
+1.0.3
+-----
+**16th Feb 2021**
+
+* Raise Django version to 3.0+, switch to external six lib
+* Add serializer support for uuid type
 
 1.0.2
 -----
